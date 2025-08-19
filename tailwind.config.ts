@@ -114,6 +114,11 @@ export default {
 			fontFamily: {
 				'ubuntu': ['Ubuntu', 'system-ui', 'sans-serif'],
 				'inter': ['Inter', 'system-ui', 'sans-serif']
+			},
+			boxShadow: {
+				'community': '0 8px 32px -8px hsl(var(--primary) / 0.2)',
+				'card': '0 4px 16px -4px hsl(var(--primary) / 0.1)',
+				'glow': '0 0 24px hsl(var(--primary-glow) / 0.3)'
 			}
 		}
 	},
