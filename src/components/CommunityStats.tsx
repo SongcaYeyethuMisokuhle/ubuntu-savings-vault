@@ -42,7 +42,7 @@ const CommunityStats = () => {
       
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((stat, index) => (
-          <Card key={index} className="card-community p-4 animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+          <Card key={index} className="card-community p-4">
             <div className="flex flex-col items-center text-center space-y-3">
               <div className="p-3 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10">
                 <stat.icon className={`h-6 w-6 ${stat.color}`} />

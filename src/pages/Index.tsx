@@ -11,12 +11,12 @@ const Index = () => {
       
       <main className="max-w-7xl mx-auto px-4 py-8">
         {/* Accessibility Bar */}
-        <div className="animate-fade-in-up">
+        <div>
           <AccessibilityBar />
         </div>
 
         {/* Welcome Section */}
-        <div className="mb-8 animate-fade-in-up">
+        <div className="mb-8">
           <div className="text-center mb-2">
             <h1 className="text-community-hero mb-3 font-ubuntu">Sawubona, Nomsa! 👋</h1>
             <p className="text-accessible text-muted-foreground max-w-2xl mx-auto">
@@ -26,22 +26,22 @@ const Index = () => {
         </div>
 
         {/* Wallet Section */}
-        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <div className="mb-12">
           <WalletCard />
         </div>
 
         {/* Community Stats */}
-        <div className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+        <div className="mb-12">
           <CommunityStats />
         </div>
 
         {/* Quick Actions */}
-        <div className="animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+        <div>
           <QuickActions />
         </div>
 
         {/* Ubuntu Message */}
-        <div className="mt-16 text-center animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+        <div className="mt-16 text-center">
           <div className="bg-card rounded-3xl p-8 border border-border/50 shadow-card max-w-2xl mx-auto">
             <h3 className="text-xl font-bold text-foreground mb-3 font-ubuntu">Ubuntu Philosophy</h3>
             <p className="text-muted-foreground italic">

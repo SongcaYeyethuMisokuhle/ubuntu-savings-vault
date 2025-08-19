@@ -148,27 +148,28 @@ All colors MUST be HSL.
   }
 
   .card-feature {
-    @apply card-community cursor-pointer;
-    @apply min-h-[8rem] flex flex-col items-center justify-center;
-    @apply hover:bg-gradient-to-br hover:from-primary/5 hover:to-accent/5;
+    @apply bg-card border border-border rounded-3xl p-6;
+    @apply shadow-card hover:shadow-community;
+    @apply cursor-pointer min-h-[8rem] flex flex-col items-center justify-center;
+    @apply hover:bg-primary/5 transition-all duration-300 hover:scale-[1.02];
   }
 
-  /* Community gradients */
+  /* Community gradients - ensure they work */
   .bg-community-gradient {
-    background: var(--gradient-community);
+    background: linear-gradient(135deg, hsl(25, 85%, 55%), hsl(25, 75%, 65%));
   }
 
   .bg-earth-gradient {
-    background: var(--gradient-earth);
+    background: linear-gradient(180deg, hsl(35, 15%, 97%), hsl(25, 25%, 85%));
   }
 
   /* Large text for accessibility */
   .text-accessible {
-    @apply text-xl leading-relaxed;
+    @apply text-xl leading-relaxed text-foreground;
   }
 
   .text-community-hero {
-    @apply text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+    @apply text-4xl md:text-5xl font-bold text-primary;
   }
 
   /* Ubuntu-inspired animations */

@@ -50,7 +50,7 @@ const QuickActions = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((feature, index) => (
-          <div key={index} className="animate-fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+          <div key={index}>
             <FeatureCard
               icon={feature.icon}
               title={feature.title}
