@@ -2,57 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* AzaniaVault Design System - Ubuntu/Community Inspired 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Community-inspired background */
+    --background: 35 15% 97%;
+    --foreground: 25 15% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card system with warmth */
+    --card: 35 20% 98%;
+    --card-foreground: 25 15% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Popover system */
+    --popover: 35 20% 98%;
+    --popover-foreground: 25 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Ubuntu Orange Primary - warm, welcoming */
+    --primary: 25 85% 55%;
+    --primary-foreground: 35 20% 98%;
+    --primary-glow: 25 75% 65%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Earth tone secondary */
+    --secondary: 25 25% 85%;
+    --secondary-foreground: 25 15% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted earth tones */
+    --muted: 30 20% 90%;
+    --muted-foreground: 25 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Gold accent for prosperity */
+    --accent: 45 75% 60%;
+    --accent-foreground: 25 15% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Soft warning colors */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 35 20% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Soft borders and inputs */
+    --border: 30 15% 85%;
+    --input: 30 15% 88%;
+    --ring: 25 85% 55%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Beautiful gradients for community warmth */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-community: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-earth: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Shadows for depth and community feel */
+    --shadow-community: 0 8px 32px -8px hsl(var(--primary) / 0.2);
+    --shadow-card: 0 4px 16px -4px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 24px hsl(var(--primary-glow) / 0.3);
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Animation timing */
+    --transition-community: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar colors for community navigation */
+    --sidebar-background: 35 20% 96%;
+    --sidebar-foreground: 25 15% 25%;
+    --sidebar-primary: 25 85% 55%;
+    --sidebar-primary-foreground: 35 20% 98%;
+    --sidebar-accent: 30 20% 92%;
+    --sidebar-accent-foreground: 25 15% 25%;
+    --sidebar-border: 30 15% 88%;
+    --sidebar-ring: 25 85% 55%;
   }
 
   .dark {
@@ -100,6 +117,104 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', 'Roboto', 'Ubuntu', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* Community-focused button variants */
+  .btn-community {
+    @apply bg-gradient-to-r from-primary to-primary-glow text-primary-foreground;
+    @apply px-8 py-4 text-lg font-semibold rounded-2xl;
+    @apply shadow-community hover:shadow-glow;
+    @apply transition-all duration-300 hover:scale-105;
+    @apply min-h-[3.5rem] min-w-[8rem];
+  }
+
+  .btn-secondary-community {
+    @apply bg-secondary text-secondary-foreground border-2 border-primary/20;
+    @apply px-8 py-4 text-lg font-semibold rounded-2xl;
+    @apply hover:bg-primary hover:text-primary-foreground;
+    @apply transition-all duration-300 hover:scale-105;
+    @apply min-h-[3.5rem] min-w-[8rem];
+  }
+
+  /* Large, accessible cards */
+  .card-community {
+    @apply bg-card border border-border rounded-3xl p-6;
+    @apply shadow-card hover:shadow-community;
+    @apply transition-all duration-300 hover:scale-[1.02];
+  }
+
+  .card-feature {
+    @apply card-community cursor-pointer;
+    @apply min-h-[8rem] flex flex-col items-center justify-center;
+    @apply hover:bg-gradient-to-br hover:from-primary/5 hover:to-accent/5;
+  }
+
+  /* Community gradients */
+  .bg-community-gradient {
+    background: var(--gradient-community);
+  }
+
+  .bg-earth-gradient {
+    background: var(--gradient-earth);
+  }
+
+  /* Large text for accessibility */
+  .text-accessible {
+    @apply text-xl leading-relaxed;
+  }
+
+  .text-community-hero {
+    @apply text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  /* Ubuntu-inspired animations */
+  .animate-gentle-bounce {
+    animation: gentle-bounce 2s ease-in-out infinite;
+  }
+
+  .animate-community-pulse {
+    animation: community-pulse 2s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes gentle-bounce {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes community-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Accessibility utilities */
+  .focus-visible-community {
+    @apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/30 focus-visible:ring-offset-2;
+  }
+
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* High contrast for readability */
+  .text-high-contrast {
+    @apply text-foreground/90;
   }
 }
