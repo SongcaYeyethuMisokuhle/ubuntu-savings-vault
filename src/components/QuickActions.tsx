@@ -1,43 +1,52 @@
 import { Calendar, MessageCircle, BookOpen, Users, TrendingUp, Phone } from "lucide-react";
 import FeatureCard from "./FeatureCard";
+import { useNavigate } from "react-router-dom";
 
 const QuickActions = () => {
+  const navigate = useNavigate();
+
   const features = [
     {
       icon: Calendar,
       title: "Schedule Meeting",
       description: "Plan your next stokvel gathering with AI assistance",
-      gradient: true
+      gradient: true,
+      action: () => navigate("/schedule-meeting")
     },
     {
       icon: BookOpen,
       title: "Learn & Grow",
       description: "Financial education in your home language",
-      gradient: false
+      gradient: false,
+      action: () => console.log("Navigate to Learn")
     },
     {
       icon: Users,
       title: "Community Chat",
       description: "Connect with your stokvel members",
-      gradient: false
+      gradient: false,
+      action: () => navigate("/community-chat")
     },
     {
       icon: TrendingUp,
       title: "Credit Score",
       description: "Build your financial profile",
-      gradient: false
+      gradient: false,
+      action: () => console.log("Navigate to Credit Score")
     },
     {
       icon: MessageCircle,
       title: "Voice Assistant",
       description: "Ask questions in isiZulu, isiXhosa & more",
-      gradient: false
+      gradient: false,
+      action: () => console.log("Activate Voice Assistant")
     },
     {
       icon: Phone,
       title: "USSD Access",
       description: "Use *120*2345# on any phone",
-      gradient: false
+      gradient: false,
+      action: () => console.log("Show USSD instructions")
     }
   ];
 
@@ -56,7 +65,7 @@ const QuickActions = () => {
               title={feature.title}
               description={feature.description}
               gradient={feature.gradient}
-              onClick={() => console.log(`Clicked ${feature.title}`)}
+              onClick={feature.action}
             />
           </div>
         ))}
