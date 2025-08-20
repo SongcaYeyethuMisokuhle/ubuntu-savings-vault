@@ -6,6 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import CommunityChat from "./pages/CommunityChat";
 import ScheduleMeeting from "./pages/ScheduleMeeting";
+import CreditScore from "./pages/CreditScore";
+import LearnAndGrow from "./pages/LearnAndGrow";
+import VoiceAssistant from "./pages/VoiceAssistant";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,6 +23,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/community-chat" element={<CommunityChat />} />
           <Route path="/schedule-meeting" element={<ScheduleMeeting />} />
+          <Route path="/credit-score" element={<CreditScore />} />
+          <Route path="/learn-and-grow" element={<LearnAndGrow />} />
+          <Route path="/voice-assistant" element={<VoiceAssistant />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -18,7 +18,7 @@ const QuickActions = () => {
       title: "Learn & Grow",
       description: "Financial education in your home language",
       gradient: false,
-      action: () => console.log("Navigate to Learn")
+      action: () => navigate("/learn-and-grow")
     },
     {
       icon: Users,
@@ -32,14 +32,14 @@ const QuickActions = () => {
       title: "Credit Score",
       description: "Build your financial profile",
       gradient: false,
-      action: () => console.log("Navigate to Credit Score")
+      action: () => navigate("/credit-score")
     },
     {
       icon: MessageCircle,
       title: "Voice Assistant",
       description: "Ask questions in isiZulu, isiXhosa & more",
       gradient: false,
-      action: () => console.log("Activate Voice Assistant")
+      action: () => navigate("/voice-assistant")
     },
     {
       icon: Phone,
